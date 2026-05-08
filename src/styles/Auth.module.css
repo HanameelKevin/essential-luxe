@@ -1,0 +1,191 @@
+.authWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.authMain {
+  flex: 1;
+  display: flex;
+  background-color: white;
+}
+
+.authSplit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  min-height: calc(100vh - 90px);
+}
+
+.authVisual {
+  position: relative;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.authVisual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  filter: grayscale(40%);
+}
+
+.authVisualContent {
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 4rem;
+}
+
+.authVisualContent h2 {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+}
+
+.authVisualContent p {
+  font-size: 1.2rem;
+  max-width: 400px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.authContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.authCard {
+  width: 100%;
+  max-width: 400px;
+}
+
+.authHeader {
+  margin-bottom: 3.5rem;
+}
+
+.authHeader h1 {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.authHeader p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.formGroup label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+}
+
+.formGroup input {
+  padding: 1rem 0;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  font-size: 1rem;
+  transition: border-color 0.4s var(--ease-quint);
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+}
+
+.submitBtn {
+  background-color: var(--primary);
+  color: var(--accent) !important;
+  padding: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  transition: all 0.4s var(--ease-quint);
+  border: 1px solid var(--primary);
+}
+
+.submitBtn:hover {
+  background-color: transparent;
+  color: var(--primary) !important;
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  color: var(--error);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.authFooter {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.authFooter a {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 992px) {
+  .authVisual {
+    display: none;
+  }
+  
+  .authSplit {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .authContent {
+    padding: 3rem 1.5rem;
+  }
+}

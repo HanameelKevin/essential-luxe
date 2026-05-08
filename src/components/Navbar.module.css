@@ -1,0 +1,123 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.4s var(--ease-quint);
+  border-bottom: 1px solid transparent;
+}
+
+.scrolled {
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom-color: var(--border);
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--primary);
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.navLinks a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-main);
+}
+
+.loginBtn {
+  margin-left: 1rem;
+}
+
+.registerBtn {
+  background-color: var(--primary);
+  color: var(--accent) !important;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.registerBtn:hover {
+  background-color: transparent;
+  color: var(--primary) !important;
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+/* User Profile Styles */
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--card-bg);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.userProfile span {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.logoutBtn {
+  font-size: 0.75rem;
+  color: var(--error);
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-left: 1rem;
+  border-left: 1px solid var(--border);
+}
+
+.mobileMenuBtn {
+  display: none;
+  color: var(--primary);
+}
+
+@media (max-width: 992px) {
+  .mobileMenuBtn {
+    display: block;
+  }
+
+  .navLinks {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.4s var(--ease-quint);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+    z-index: 1001;
+  }
+
+  .navLinks.active {
+    right: 0;
+  }
+}
